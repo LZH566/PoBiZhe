@@ -1271,7 +1271,148 @@
                 display: none;
             }
         }
-        
+    
+	    /* 全局视口和盒模型优化 */
+	    * {
+	        box-sizing: border-box;
+	    }
+	    
+	    html {
+	        font-size: 16px;
+	    }
+	    
+	    body {
+	        overflow-x: hidden;
+	        width: 100%;
+	        max-width: 100vw;
+	    }
+	    
+	    /* 响应式容器 */
+	    .container {
+	        width: 100%;
+	        padding-right: 15px;
+	        padding-left: 15px;
+	        margin-right: auto;
+	        margin-left: auto;
+	    }
+	    
+	    @media (max-width: 768px) {
+	        .container {
+	            padding-right: 12px;
+	            padding-left: 12px;
+	        }
+	        
+	        /* Hero区域自适应 */
+	        .hero-section {
+	            padding: 60px 0;
+	        }
+	        
+	        .hero-section .row {
+	            flex-direction: column;
+	        }
+	        
+	        .hero-section img {
+	            max-height: 200px !important;
+	            margin-bottom: 20px;
+	        }
+	        
+	        .hero-title {
+	            font-size: 1.6rem;
+	        }
+	        
+	        .hero-subtitle {
+	            font-size: 1rem;
+	        }
+	        
+	        /* 商品网格 - 2列 */
+	        #productGrid .col-md-6.col-lg-4 {
+	            width: 50%;
+	            padding: 0 8px;
+	        }
+	        
+	        #productGrid {
+	            margin: 0 -8px;
+	        }
+	        
+	        /* 认证专区 */
+	        #certifiedProductsGrid .col-md-4.col-lg-3 {
+	            width: 50%;
+	        }
+	        
+	        /* 盲盒专区 */
+	        .blind-box-section {
+	            padding: 20px;
+	        }
+	        
+	        /* 模态框 */
+	        .auth-content, 
+	        .ai-generator-content, 
+	        .cart-content, 
+	        .profile-content, 
+	        .payment-content {
+	            width: 95%;
+	            max-height: 95vh;
+	            padding: 20px;
+	        }
+	        
+	        /* 支付方式 - 2列 */
+	        .payment-methods {
+	            grid-template-columns: repeat(2, 1fr);
+	            gap: 10px;
+	        }
+	        
+	        /* 表单元素防止缩放 */
+	        input, select, textarea, .form-control, .form-select {
+	            font-size: 16px !important;
+	        }
+	        
+	        /* 语音助手位置 */
+	        .voice-assistant-btn {
+	            bottom: 80px;
+	            right: 15px;
+	            width: 55px;
+	            height: 55px;
+	        }
+	        
+	        .voice-chat-box {
+	            width: 90%;
+	            right: 5%;
+	            left: 5%;
+	            bottom: 100px;
+	        }
+	        
+	        /* 底部导航显示 */
+	        .bottom-nav {
+	            display: flex;
+	        }
+	        
+	        body {
+	            padding-bottom: 70px;
+	        }
+	        
+	        /* 商品详情页 */
+	        #productDetailModal [style*="height: 300px"] {
+	            height: 200px !important;
+	        }
+	        
+	        /* flex换行 */
+	        .d-flex.gap-3, .d-flex.gap-2, .d-flex.gap-1 {
+	            flex-wrap: wrap;
+	        }
+	    }
+	    
+	    /* 电脑端隐藏底部导航（确保） */
+	    @media (min-width: 769px) {
+	        .bottom-nav {
+	            display: none;
+	        }
+	    }
+	    
+	    /* 图片自适应 */
+	    img {
+	        max-width: 100%;
+	        height: auto;
+	    }	
     </style>
 </head>
 <body>
